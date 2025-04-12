@@ -4,8 +4,8 @@
 While progress has been made in legal applications, law reasoning, crucial for fair adjudication, remains unexplored. We propose a transparent law reasoning schema enriched with hierarchical factum probandum, evidence, and implicit experience, enabling public scrutiny and preventing bias. Inspired by this schema, we introduce the challenging task, which takes a textual case description and outputs a hierarchical structure justifying the final decision. We also create the first crowd-sourced dataset for this task, enabling comprehensive evaluation. Simultaneously, we propose an agent framework that employs a comprehensive suite of legal analysis tools to address the challenge task. This benchmark paves the way for transparent and accountable AI-assisted law reasoning in the "Intelligent Court".
 
 
-# Transparent Law Reasoning Agent
-We have provided the source code of our TL Agent system. For more details, please refer to the [TLAgent](./TLAgent/). You can understand the system structure and specific installation and configuration tutorials through [README.md](./TLAgent/README.md).
+# TL Agent
+We have provided the source code of our Transparent Law Reasoning Agent (TL Agent for short). For more details, please refer to the [TLAgent](./TLAgent/). You can learn the system structure and specific installation and configuration tutorials through [TLAgent Introduction](./TLAgent/README.md).
 
 # Dataset
 Coming soon...
