@@ -1,0 +1,34 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Please perform task by understanding the objectives and analyze the content of task.
+and give the relevant knowledge, rules and text features needed to complete the task
+objectives, and being smart and brief.
+
+the following text list, `{text_list}`.
+
+Respond with only valid JSON conforming to the following json schema. You should generate JSON as output and not JSON schema.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "knowledge": {
+            "type": "str",
+            "description": "The domain knowledge required to accomplish the task objectives",
+        }
+        "rules": {
+            "type": "str",
+            "description": "The rules required to accomplish the task objectives",
+        },
+        "features": {
+            "type": "str",
+            "description": "Text features that satisfy the requirements of the task objectives",
+        },
+     },
+    },
+    "required": ["knowledge", "rules", "features"],
+    "additionalProperties": false
+}
+

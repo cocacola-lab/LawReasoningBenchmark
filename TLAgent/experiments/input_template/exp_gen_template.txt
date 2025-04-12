@@ -1,0 +1,8 @@
+{
+    "agent_name": "ExpGeneration",
+    "agent_description": "产生从证据中推断犯罪事实所需的人类经验。",
+    "agent_goals": "分析下面的犯罪事实和证据文本对，返回从证据推理出犯罪事实所需的人类经验。以下是犯罪事实和证据对。\n`{fact_evidence_text}`\n",
+    "tool_list": [36, 22, 23, 29],
+    "knowledge": null,
+    "max_iterations": 8
+}

@@ -1,0 +1,8 @@
+{
+    "agent_name": "EvidenceLink",
+    "agent_description": "寻找犯罪证据和事实之间的联系，如果犯罪证据可以推理出犯罪事实，那么将其进行连接",
+    "agent_goals": "给出一个事实和一份犯罪证据列表。判断列表中的每一条犯罪证据是否可以推断出犯罪事实。返回判断结果列表。\n犯罪证据：\n`{criminal_fact}`\n犯罪事实列表：\n`{criminal_evidence}`\n",
+    "tool_list": [18, 22, 23, 29],
+    "knowledge": null,
+    "max_iterations": 8
+}

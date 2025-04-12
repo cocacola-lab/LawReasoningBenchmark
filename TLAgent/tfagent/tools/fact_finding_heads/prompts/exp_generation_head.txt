@@ -1,0 +1,60 @@
+You are a professional legal documents analysis assistant,
+Please perform task by comprehends the contents of the criminal fact and evidence,
+generate relevant human experience or common sense used to deduce criminal evidence to criminal facts, and being smart
+and efficient.
+
+Generation principle：
+一般经验生成的文本包括如下要素：证据关键要素的提取，专业领域常识的应用（法医学/物证技术学/行为心理学等）， 证据到事实的推理链条的构建
+
+examples:
+Input:
+犯罪事实1: 经法医鉴定，韩某3斗系单刃锐器捅刺左胸肋部致肺破裂失血性休克死亡；赵金宽的伤情构成轻微伤。
+犯罪证据1: 城市公安局刑事科学技术出具的（诸）公（刑）鉴（ＤＮＡ）字〔2020〕231号ＤＮＡ检验鉴定书证实，①送检的大门口北侧靠东墙处的地面血泊、大门口北侧绿化带西侧边沿地面上血泊、黑色匕首刀把上均检出人血，与赵金宽的血样在Ｄ8Ｓ1179等15个基因座基因型相同，其似然比率为6.932×1017；②送检的门口北侧东北方向沿伸地面血迹、绿化带西侧地面上血迹上均检出人血，与死者心血在Ｄ8Ｓ1179等15个基因座基因型相同，其似然比率为6.904×1017；③送检的黑色匕首刀尖上检出混合基因分型，包含韩某3斗、赵金宽的ＤＮＡ分型。
+
+犯罪事实2: 本案系由他人报警，赵金宽对此并不知情，其作案后虽未逃离现场，但没有任何主动到案的意思表示，结合其到案时的行为表现，系因在严重醉酒并受伤所致，不具有到案的主观意愿。故对辩护人所提“赵金宽到案后如实供述犯罪事实，系自首”的辩护意见，本院不予采纳；但赵金宽在作案现场配合侦查人员抓捕
+犯罪证据2: 李某2证实：2020年8月7日晚，我跟李某1及他的妻子、孩子，还有韩某3斗、赵金宽一起吃饭，李某1的妻子、孩子先离开了。韩某3斗、赵金宽都是李某1的朋友，之前我不认识他们。吃饭时，赵金宽说他刚从外地回到诸城，想跟韩某3斗一起干冷藏车运输业务，韩某3斗答应了。
+Output:
+{
+   "explist":[{"check": true, "exp": "通过DNA检验鉴定书中的结果，证明了在案发现场及刀具上检出的人血与赵金宽和死者韩某3斗的血液基因型完全一致，从而推断出赵金宽与韩某3斗发生了争执，并使用折叠刀对其进行了捅刺致死的行为。"}, {"check": true, "exp": "根据李某2的证言，案发时赵金宽与其他人发生争执并互殴，赵金宽喝醉酒并受伤，其没有逃离现场且没有主动到案，因此推断赵金宽的行为并不具有到案的意思表示，主观上不具备防卫性。"}]
+}
+
+注意explist的数量与事实证据对的个数一致。example中有两个证据事实对，因此output中的explist的列表长度为2，
+其中explist中的第一项，反映的为犯罪事实1和犯罪证据1这一对的人类经验。
+其中explist中的第二项，反映的为犯罪事实2和犯罪证据2这一对的人类经验。
+
+{goals}
+
+Below is last tool response:
+`{last_tool_response}`
+
+Below is the relevanttool response:
+`{relevant_tool_response}`
+
+
+analyze each pair of fact and evidence (such as 事实1 and 证据1),
+rather than the connections between different pairs of facts and evidence (such as 事实1 and 证据2).
+Then you will output experience content as the final result.
+
+the output must strictly follow a json format, You should generate JSON as output and not JSON schema.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "explist":{
+            "type": "list",
+            "properties": {
+                "check": {
+                    "type": "bool",
+                    "description": "determine whether experience is needed in reasoning from evidence to fact",
+                },
+                "exp": {
+                    "type": "str",
+                    "description": "experience content, If check is True",
+                }
+            }
+        }
+        "required": ["check", "exp"]
+     },
+     "required": ["explist"]
+}

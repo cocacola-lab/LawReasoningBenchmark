@@ -1,0 +1,20 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Relevant knowledge:
+`{last_tool_response}`
+
+and the input text is
+`{input_text}`
+
+
+
+Please perform task by comprehends the Objective,
+and according to the relevant knowledge to determine
+whether the input text is accurate, If the  input text are inaccurate,
+you need to be revised the input text to make it accurate.
+
+the output must strictly follow the input text. Do not output any extra information.
+eg. the input text is dict, the output text is also dict.
+the input text is str, the output text is also str.

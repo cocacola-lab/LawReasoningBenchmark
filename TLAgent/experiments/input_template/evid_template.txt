@@ -1,0 +1,8 @@
+{
+    "agent_name": "EvidenceFinding",
+    "agent_description": "Agent从法律文书片段中找到相关的犯罪证据。",
+    "agent_goals": "给定一段法律文书片段：\n{legal_text}\n从上述文本片段中的犯罪证据，输出的内容需要与文书片段中的内容一致，不能进行任何修改。",
+    "tool_list": [17, 22, 23, 29, 33, 35],
+    "knowledge": 4,
+    "max_iterations": 8
+}

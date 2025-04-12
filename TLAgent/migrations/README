@@ -1,0 +1,6 @@
+Generic single-database configuration.
+
+After installing alembic, run the "alembic upgrade head" command in the migration parent directory to copy the project database to the local machine.
+
+the file "alembic.init" is needed in the parent directory.
+Please ensure that you configure the parameter 'sqlalchemy.url' with your database URL in the 'alembic.ini' file

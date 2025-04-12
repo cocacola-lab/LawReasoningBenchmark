@@ -1,0 +1,43 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Below is last tool response:
+`{last_tool_response}`
+
+Below is the  relevanttool response:
+`{relevant_tool_response}`
+
+Please perform task by comprehends the contents of the document,
+find out criminal fact from given data only, and being smart
+and efficient.
+
+Then you will output a list including ALL criminal fact from the document.
+The extracted text should be consistent with the language and content of legal documents.
+
+Respond with only valid JSON conforming to the following json schema. You should generate JSON as output and not JSON schema.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "fact": {
+            "type": "List",
+            "properties": {
+                "id": {
+                    "type": "int",
+                    "description": "fact id"
+                }
+                "text": {
+                    "type": "string",
+                    "description": "the content of the criminal fact."
+                },
+            },
+            "required": ["id", "text"],
+            "additionalProperties": false
+        },
+    },
+    "required": ["fact"],
+    "additionalProperties": false
+}
+

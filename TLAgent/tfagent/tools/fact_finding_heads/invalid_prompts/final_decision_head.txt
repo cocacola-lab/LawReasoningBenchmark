@@ -1,0 +1,28 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Below is last tool response:
+`{last_tool_response}`
+
+Please perform task by comprehends the contents of the interim criminal facts,
+summarize the facts to form the final criminal fact from given data only, and being smart
+and efficient.
+
+Then you will output the final criminal fact according to the interim criminal facts .
+The summarized text should be consistent with the language of the interim facts.
+The output must strictly follow a json format, You should generate JSON as output and not JSON schema.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "finalfact": {
+            "type": "str",
+            "description": "final criminal fact",
+        },
+    },
+    "required": ["finalfact"],
+    "additionalProperties": false
+}
+

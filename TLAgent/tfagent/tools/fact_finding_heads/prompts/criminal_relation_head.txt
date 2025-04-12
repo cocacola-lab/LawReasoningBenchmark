@@ -1,0 +1,42 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Below is last tool response:
+`{last_tool_response}`
+
+Below is the  relevanttool response:
+`{relevant_tool_response}`
+
+Please perform task by comprehends the contents of the criminal fact and evidence,
+determine whether there is a relation between them, and being smart
+and efficient.
+
+Then you will output a Boolean value as the final result, True if the evidence supports the fact, False otherwise.
+
+Respond with only valid JSON conforming to the following json schema. You should generate JSON as output and not JSON schema.
+If there are quotation marks in the text, Please use escape characters before the mark.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "checklist": {
+            "type": "list",
+            "properties": {
+                "id": {
+                    "type": "int",
+                    "description": "evidence id"
+                }
+                "check": {
+                    "type": "bool",
+                    "description": "whether the evidence can support the criminal fact"
+                },
+            },
+            "required": ["id", "check"],
+            "additionalProperties": false
+        },
+    },
+    "required": ["checklist"],
+    "additionalProperties": false
+}

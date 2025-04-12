@@ -1,0 +1,37 @@
+Please perform task by understanding the emotional tone of each text string
+in the text list and determine whether the emotion in each string is "positive",
+"negative" or "neutral"., and being smart and efficient.
+
+the following text list, `{text_list}`.
+
+Respond with only valid JSON conforming to the following json schema. You should generate JSON as output and not JSON schema.
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties":{
+        "emotions": {
+                "type": "List",
+                "properties": {
+                    "id": {
+                        "type": "int",
+                        "description": "text id"
+                    },
+                    "text": {
+                        "type": "str",
+                        "description": "the content of text"
+                    }
+                    "type": {
+                        "type": "string",
+                        "description": "the type of emotional tone, please select from positive,
+                        negative or neutral."
+                    },
+                },
+                "required": ["id", "text", "type"],
+                "additionalProperties": false
+            },
+    },
+    "required": ["emotions"],
+    "additionalProperties": false
+}
+

@@ -1,0 +1,8 @@
+{
+    "agent_name": "FinalFactFinding",
+    "agent_description": "Agent根据法律文书片段中找到的犯罪事实，推理总结出最终的犯罪事实。",
+    "agent_goals": "根据抽取得到的下述中间事实：\n{legal_text}\n根据上述部分犯罪事实，推理总结出最终犯罪事实。",
+    "tool_list": [19, 22, 23, 26, 29, 34],
+    "knowledge": null,
+    "max_iterations": 8
+}

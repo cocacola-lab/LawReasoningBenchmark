@@ -1,0 +1,34 @@
+Given the following overall objective
+Objective:
+{goals}
+
+Below is last tool response:
+`{last_tool_response}`
+
+Below is the  relevanttool response:
+`{relevant_tool_response}`
+
+Please perform task by comprehends the contents of the criminal fact and evidence,
+generate relevant human experience or common sense used to deduce criminal evidence to criminal facts., and being smart
+and efficient.
+
+Then you will output experience content as the final result.
+
+the output must strictly follow a json format,
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+            "check": {
+                "type": "bool",
+                "description": "determine whether experience is needed in reasoning from evidence to fact",
+            },
+            "exp": {
+                "type": "str",
+                "description": "experience content, If check is True",
+            }
+     },
+     "required": ["check", "exp"]
+}
+
